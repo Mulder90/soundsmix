@@ -1,5 +1,5 @@
 .widget {
-  border: 2px solid #dfdfdf;
+  background: #ecf0f1;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   height: 220px;
 
   &.active {
-    background: aquamarine;
+    background: #bdc3c7;
   }
 
   .title {
@@ -39,7 +39,6 @@
       .playPause {
         width: 80px;
         height: 80px;
-        background: red;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -48,11 +47,12 @@
 
     .volumeSliderWrapper {
       width: 100%;
-      height: 7px;
-      background: orange;
+      height: 5px;
+      background: white;
+      border-radius: 5px;
 
       &.disabled {
-        opacity: 0.6;
+        opacity: 0.8;
       }
     }
   }

@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react";
 import styles from "./SoundWidget.module.scss";
 
 const SoundWidget = ({ title, path }) => {
-  const id = `sound-${title}}`;
+  const id = `sound-${title}`;
   const [isActive, setIsActive] = useState(false);
+
   let audioTag;
 
   useEffect(() => {
