@@ -5,6 +5,7 @@ import styles from "./SoundWidget.module.scss";
 const SoundWidget = ({ title, path }) => {
   const id = `sound-${title}`;
   const [isActive, setIsActive] = useState(false);
+  const [volume, setVolume] = useState(100);
 
   let audioTag;
 
@@ -16,6 +17,13 @@ const SoundWidget = ({ title, path }) => {
     if (audioTag) {
       setIsActive(!isActive);
       audioTag.paused ? audioTag.play() : audioTag.pause();
+    }
+  };
+
+  const onVolumeChange = (evt) => {
+    if (audioTag) {
+      setVolume(evt.target.value);
+      audioTag.volume = evt.target.value / 100;
     }
   };
 
@@ -32,15 +40,21 @@ const SoundWidget = ({ title, path }) => {
       <div className={styles.controls}>
         <div className={styles.playWrapper} onClick={onPlayPause}>
           <div className={styles.playPause}>
-            {isActive ? "playing" : "play"}
+            {isActive ? "Playing" : "Start"}
           </div>
         </div>
-        <div
+        <input
           className={`${styles.volumeSliderWrapper} ${
             !isActive ? styles.disabled : ""
           }`}
           disabled={isActive ? false : true}
-        ></div>
+          type="range"
+          min="0"
+          max="100"
+          step="1"
+          value={volume}
+          onChange={onVolumeChange}
+        />
       </div>
     </div>
   );
