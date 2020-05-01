@@ -3,14 +3,14 @@ import React, { useState, useEffect } from "react";
 import styles from "./SoundWidget.module.scss";
 
 const SoundWidget = ({ title, path }) => {
-  const id = `sound-${title}`;
+  const audioId = `audio-${title}`;
   const [isActive, setIsActive] = useState(false);
   const [volume, setVolume] = useState(100);
 
   let audioTag;
 
   useEffect(() => {
-    audioTag = document.getElementById(id);
+    audioTag = document.getElementById(audioId);
   });
 
   const onPlayPause = () => {
@@ -32,29 +32,37 @@ const SoundWidget = ({ title, path }) => {
       className={`${styles.widget} ${isActive ? styles.active : ""}`}
       data-active={isActive}
     >
-      <audio loop src={path} id={id} preload="none">
+      <audio loop src={path} id={audioId} preload="none">
         Your browser does not support the
         <code>audio</code> element.
       </audio>
       <h3 className={styles.title}>{title}</h3>
       <div className={styles.controls}>
-        <div className={styles.playWrapper} onClick={onPlayPause}>
+        <button
+          className={`${styles.playWrapper} ${isActive ? styles.active : ""}`}
+          onClick={onPlayPause}
+        >
           <div className={styles.playPause}>
             {isActive ? "Playing" : "Start"}
           </div>
-        </div>
-        <input
+        </button>
+        <div
           className={`${styles.volumeSliderWrapper} ${
             !isActive ? styles.disabled : ""
           }`}
-          disabled={isActive ? false : true}
-          type="range"
-          min="0"
-          max="100"
-          step="1"
-          value={volume}
-          onChange={onVolumeChange}
-        />
+        >
+          <input
+            id={`audio-range-${title}`}
+            disabled={isActive ? false : true}
+            type="range"
+            min="0"
+            max="100"
+            step="1"
+            value={volume}
+            onChange={onVolumeChange}
+            aria-label={`Volume Slider for ${title}`}
+          />
+        </div>
       </div>
     </div>
   );

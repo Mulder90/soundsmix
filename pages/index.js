@@ -12,22 +12,6 @@ export default () => (
     <SoundsGrid>
       <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
       <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
-      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
-      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
-      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
-      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
-      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
-      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
-      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
-      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
-      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
-      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
-      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
-      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
-      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
-      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
-      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
-      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
     </SoundsGrid>
   </Layout>
 );
