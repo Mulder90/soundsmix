@@ -43,7 +43,17 @@ const SoundWidget = ({ title, path }) => {
           onClick={onPlayPause}
         >
           <div className={styles.playPause}>
-            {isActive ? "Playing" : "Start"}
+            {isActive ? (
+              <div className={styles.waveContainer}>
+                <div className={`${styles.wave} ${styles.wave1}`}></div>
+                <div className={`${styles.wave} ${styles.wave2}`}></div>
+                <div className={`${styles.wave} ${styles.wave3}`}></div>
+                <div className={`${styles.wave} ${styles.wave4}`}></div>
+                <div className={`${styles.wave} ${styles.wave5}`}></div>
+              </div>
+            ) : (
+              "Start"
+            )}
           </div>
         </button>
         <div
