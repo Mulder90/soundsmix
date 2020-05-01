@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPlay,
+  faVolumeMute,
+  faVolumeUp,
+} from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./SoundWidget.module.scss";
 
@@ -20,10 +26,14 @@ const SoundWidget = ({ title, path }) => {
     }
   };
 
+  const changeVolume = (vol) => {
+    setVolume(vol);
+    audioTag.volume = vol / 100;
+  };
+
   const onVolumeChange = (evt) => {
     if (audioTag) {
-      setVolume(evt.target.value);
-      audioTag.volume = evt.target.value / 100;
+      changeVolume(evt.target.value);
     }
   };
 
@@ -52,7 +62,7 @@ const SoundWidget = ({ title, path }) => {
                 <div className={`${styles.wave} ${styles.wave5}`}></div>
               </div>
             ) : (
-              "Start"
+              <FontAwesomeIcon icon={faPlay} />
             )}
           </div>
         </button>
@@ -61,9 +71,15 @@ const SoundWidget = ({ title, path }) => {
             !isActive ? styles.disabled : ""
           }`}
         >
+          <FontAwesomeIcon
+            className={styles.volumeIcon}
+            icon={faVolumeMute}
+            onClick={() => changeVolume(0)}
+            disabled={!isActive || !volume === 0}
+          />
           <input
             id={`audio-range-${title}`}
-            disabled={isActive ? false : true}
+            disabled={!isActive}
             type="range"
             min="0"
             max="100"
@@ -71,6 +87,12 @@ const SoundWidget = ({ title, path }) => {
             value={volume}
             onChange={onVolumeChange}
             aria-label={`Volume Slider for ${title}`}
+          />
+          <FontAwesomeIcon
+            className={styles.volumeIcon}
+            icon={faVolumeUp}
+            onClick={() => changeVolume(100)}
+            disabled={!isActive || volume === 100}
           />
         </div>
       </div>
