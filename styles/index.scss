@@ -1,0 +1,37 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  display: flex;
+  flex: 1 0 auto;
+  padding: 2rem 2rem;
+  margin: 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+  padding: 0.7rem 0;
+}
