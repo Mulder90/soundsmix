@@ -51,6 +51,7 @@ const SoundWidget = ({ title, path }) => {
         <button
           className={`${styles.playWrapper} ${isActive ? styles.active : ""}`}
           onClick={onPlayPause}
+          aria-label={`Play/Pause button for ${title}`}
         >
           <div className={styles.playPause}>
             {isActive ? (
