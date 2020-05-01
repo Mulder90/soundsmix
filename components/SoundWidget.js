@@ -51,7 +51,7 @@ const SoundWidget = ({ title, path }) => {
         <button
           className={`${styles.playWrapper} ${isActive ? styles.active : ""}`}
           onClick={onPlayPause}
-          aria-label={`Play/Pause button for ${title}`}
+          aria-label={`${isActive ? "Stop" : "Start"} button for ${title}`}
         >
           <div className={styles.playPause}>
             {isActive ? (
@@ -72,12 +72,20 @@ const SoundWidget = ({ title, path }) => {
             !isActive ? styles.disabled : ""
           }`}
         >
-          <FontAwesomeIcon
+          <button
+            onClick={() => changeVolume(volume === 0 ? 100 : 0)}
+            disabled={!isActive}
             className={styles.volumeIcon}
-            icon={faVolumeMute}
-            onClick={() => changeVolume(0)}
-            disabled={!isActive || !volume === 0}
-          />
+            aria-label={`${
+              volume === 0 ? "Enable" : "Disable"
+            } volume for ${title}`}
+          >
+            {volume === 0 ? (
+              <FontAwesomeIcon icon={faVolumeMute} />
+            ) : (
+              <FontAwesomeIcon icon={faVolumeUp} />
+            )}
+          </button>
           <input
             id={`audio-range-${title}`}
             disabled={!isActive}
@@ -88,12 +96,6 @@ const SoundWidget = ({ title, path }) => {
             value={volume}
             onChange={onVolumeChange}
             aria-label={`Volume Slider for ${title}`}
-          />
-          <FontAwesomeIcon
-            className={styles.volumeIcon}
-            icon={faVolumeUp}
-            onClick={() => changeVolume(100)}
-            disabled={!isActive || volume === 100}
           />
         </div>
       </div>
