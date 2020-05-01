@@ -1,5 +1,59 @@
 .widget {
-  background: olivedrab;
-  width: 200px;
-  height: 200px;
+  border: 2px solid #dfdfdf;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  width: 220px;
+  height: 220px;
+
+  &.active {
+    background: aquamarine;
+  }
+
+  .title {
+    color: black;
+    font-weight: 300;
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0;
+  }
+
+  .controls {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    .playWrapper {
+      flex: 1 0 auto;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      cursor: pointer;
+
+      .playPause {
+        width: 80px;
+        height: 80px;
+        background: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .volumeSliderWrapper {
+      width: 100%;
+      height: 7px;
+      background: orange;
+
+      &.disabled {
+        opacity: 0.6;
+      }
+    }
+  }
 }

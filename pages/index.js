@@ -10,13 +10,24 @@ export default () => (
     description="SoundsMix Homepage. Combine sounds and relax."
   >
     <SoundsGrid>
-      <SoundWidget />
-      <SoundWidget />
-      <SoundWidget />
-      <SoundWidget />
-      <SoundWidget />
-      <SoundWidget />
-      <SoundWidget />
+      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
+      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
+      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
+      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
+      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
+      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
+      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
+      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
+      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
+      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
+      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
+      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
+      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
+      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
+      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
+      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
+      <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />
+      <SoundWidget title="Fireplace" path="/sounds/fireplace.wav" />
     </SoundsGrid>
   </Layout>
 );
