@@ -8,9 +8,11 @@ import * as gtag from "../lib/gtag";
 
 import "../styles/index.scss";
 
-Router.events.on("routeChangeComplete", (url) => gtag.pageView(url));
+if (process.env.IS_GOOGLE_ANALYTICS_ENABLED) {
+  Router.events.on("routeChangeComplete", (url) => gtag.pageView(url));
+}
 
-export default class MyApp extends App {
+export default class SoundsMixApp extends App {
   render() {
     const { Component, pageProps } = this.props;
 

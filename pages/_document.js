@@ -4,7 +4,7 @@ import Document, { Head, Main, NextScript } from "next/document";
 import { GA_TRACKING_ID } from "../lib/gtag";
 import { ADSENSE_CLIENT_ID } from "../lib/adsense";
 
-export default class extends Document {
+export default class SoundsMixDocument extends Document {
   render() {
     return (
       <html lang="en">
