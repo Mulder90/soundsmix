@@ -12,10 +12,10 @@ const FixedSizeAdUnit = ({ adSlot, width, height }) => {
   }, [router.pathname]);
 
   return (
-    <div key={router.pathname} style={{ width: "100%" }}>
+    <div key={router.pathname} style={{ width: "100%", display: "flex" }}>
       <ins
         className="adsbygoogle"
-        style={{ display: "inline-block", width, height }}
+        style={{ display: "inline-block", margin: "0 auto", width, height }}
         data-ad-client={ADSENSE_CLIENT_ID}
         data-ad-slot={adSlot}
       />
