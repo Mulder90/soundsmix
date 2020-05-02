@@ -1,12 +1,11 @@
 import FixedSizeAdUnit from "./FixedSizeAdUnit";
 import FakeAdUnit from "./FakeAdUnit";
 
-const injectAd = ({ adSlot, width, height, key }) =>
+const injectAd = ({ adSlot, width, height }) =>
   process.env.SHOW_REAL_ADS ? (
-    <FixedSizeAdUnit adSlot={adSlot} width={width} height={height} key={key} />
+    <FixedSizeAdUnit adSlot={adSlot} width={width} height={height} />
   ) : (
-    <FakeAdUnit width={width} height={height} key={key} />
+    <FakeAdUnit width={width} height={height} />
   );
-const AD_UNIT_ID = "6488417658";
 
-export { injectAd, AD_UNIT_ID };
+export { injectAd };

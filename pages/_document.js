@@ -1,8 +1,8 @@
 import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
 
-import { GA_TRACKING_ID } from "../lib/gtag";
-import { ADSENSE_CLIENT_ID } from "../lib/adsense";
+import { GA_TRACKING_ID } from "../constants";
+import { ADSENSE_CLIENT_ID } from "../constants";
 
 export default class SoundsMixDocument extends Document {
   render() {

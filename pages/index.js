@@ -3,9 +3,10 @@ import React from "react";
 import Layout from "../components/Layout";
 import SoundsGrid from "../components/SoundsGrid";
 import SoundWidget from "../components/sound/SoundWidget";
-import { injectAd, AD_UNIT_ID } from "../components/ads";
+import { injectAd } from "../components/ads";
 
 import { getAllSounds } from "../lib/api";
+import { AD_UNIT_WIDTH, AD_UNIT_HEIGHT, AD_UNIT_ID } from "../constants";
 
 const HomePage = ({ allSounds }) => {
   const allItems = allSounds.reduce(
@@ -14,12 +15,12 @@ const HomePage = ({ allSounds }) => {
         <SoundWidget title={title} path={path} attribution={attribution} />
       );
 
-      if ((index + 1) % 3 === 0 && process.env.IS_ADSENSE_ENABLED) {
+      if ((index / 3) % 2 === 0 && process.env.IS_ADSENSE_ENABLED) {
         acc.push(
           injectAd({
             adSlot: AD_UNIT_ID,
-            width: "300px",
-            height: "250px",
+            width: `${AD_UNIT_WIDTH}px`,
+            height: `${AD_UNIT_HEIGHT}px`,
           })
         );
       }
