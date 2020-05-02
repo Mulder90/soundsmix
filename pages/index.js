@@ -8,7 +8,7 @@ import { injectAd } from "../components/ads";
 const HomePage = () => (
   <Layout
     title="Home"
-    description="SoundsMix Homepage. Combine sounds and relax."
+    description="SoundsMix. Mix sounds and create the perfect combination to relax, study or work."
   >
     <SoundsGrid>
       <SoundWidget title="Restaurant" path="/sounds/restaurant.wav" />

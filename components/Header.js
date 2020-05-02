@@ -9,12 +9,17 @@ const Header = ({ title, description }) => {
     <>
       <NextSeo title={title} description={description} />
       <header className={styles.header}>
-        <h1>
+        <div className={styles.titleWrapper}>
           <Link href="/">
-            <a>SoundsMix</a>
+            <a>
+              <h1>SoundsMix</h1>
+              <img src="/images/blender.svg" width="50" />
+            </a>
           </Link>
-        </h1>
-        <h2>Combine sounds and relax</h2>
+        </div>
+        <h2>
+          Mix sounds and create the perfect combination to relax, study or work.
+        </h2>
       </header>
     </>
   );
