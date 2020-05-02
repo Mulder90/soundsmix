@@ -3,7 +3,8 @@ import React from "react";
 import Layout from "../components/Layout";
 import SoundsGrid from "../components/SoundsGrid";
 import SoundWidget from "../components/SoundWidget";
-import AdUnit from "../components/AdUnit";
+import AdUnit from "../components/ads/AdUnit";
+import FakeAdUnit from "../components/ads/FakeAdUnit";
 
 export default () => (
   <Layout
@@ -18,18 +19,7 @@ export default () => (
     {process.env.IS_ADSENSE_ENABLED ? (
       <AdUnit adSlot="6488417658" />
     ) : (
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
-          height: "80px",
-          background: "red",
-        }}
-      >
-        ADUNIT
-      </div>
+      <FakeAdUnit width="100%" height="120px" />
     )}
     <SoundsGrid>
       <SoundWidget title="Ocean Wave" path="/sounds/ocean-wave.wav" />

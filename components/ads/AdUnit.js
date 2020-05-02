@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
-import { ADSENSE_CLIENT_ID } from "../lib/adsense";
+import { ADSENSE_CLIENT_ID } from "../../lib/adsense";
 
 const AdUnit = ({ adSlot }) => {
   const router = useRouter();
