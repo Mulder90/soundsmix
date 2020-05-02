@@ -9,6 +9,9 @@ const FakeAdUnit = ({ width, height }) => (
       width,
       height,
       background: "red",
+      margin: "0 auto",
+      minWidth: "200px",
+      minHeight: "200px",
     }}
   >
     ADUNIT

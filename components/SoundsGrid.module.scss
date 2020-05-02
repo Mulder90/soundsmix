@@ -1,13 +1,12 @@
-.grid {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  row-gap: 5rem;
-  column-gap: 5rem;
-  display: grid;
+.wrapper {
   padding: 2rem 0;
 }
 
-@media screen and (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(3, minmax(0, 220px));
-  }
+.grid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  row-gap: 5rem;
+  column-gap: 5rem;
+  display: grid;
+  margin: 0 auto;
+  max-width: 1060px;
 }

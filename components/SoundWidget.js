@@ -38,10 +38,7 @@ const SoundWidget = ({ title, path }) => {
   };
 
   return (
-    <div
-      className={`${styles.widget} ${isActive ? styles.active : ""}`}
-      data-active={isActive}
-    >
+    <div className={styles.widget} data-active={isActive}>
       <audio loop src={path} id={audioId} preload="none">
         Your browser does not support the
         <code>audio</code> element.
