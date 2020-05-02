@@ -3,21 +3,17 @@
 
   .titleWrapper {
     margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: white;
-
-      h1 {
-        font-weight: 300;
-        text-transform: uppercase;
-        letter-spacing: 0.3em;
-        font-size: 2.2rem;
-        text-align: center;
-      }
+    h1 {
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 2.2rem;
+      text-align: center;
     }
   }
 

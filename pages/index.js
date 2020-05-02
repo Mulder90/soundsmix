@@ -2,7 +2,7 @@ import React from "react";
 
 import Layout from "../components/Layout";
 import SoundsGrid from "../components/SoundsGrid";
-import SoundWidget from "../components/SoundWidget";
+import SoundWidget from "../components/sound/SoundWidget";
 import { injectAd, AD_UNIT_ID } from "../components/ads";
 
 import { getAllSounds } from "../lib/api";
