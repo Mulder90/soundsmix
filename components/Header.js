@@ -13,7 +13,7 @@ const Header = ({ title, description }) => {
           <Link href="/">
             <a>
               <h1>SoundsMix</h1>
-              <img src="/images/blender.svg" width="50" />
+              <img src="/images/blender.svg" width="50" alt="Mixer" />
             </a>
           </Link>
         </div>

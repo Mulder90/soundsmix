@@ -91,6 +91,9 @@ const SoundWidget = ({ title, path }) => {
             max="100"
             step="1"
             value={volume}
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow={volume}
             onChange={onVolumeChange}
             aria-label={`Volume Slider for ${title}`}
           />

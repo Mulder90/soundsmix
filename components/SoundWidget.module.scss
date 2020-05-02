@@ -41,7 +41,7 @@
         align-items: center;
         justify-content: center;
         font-size: 3rem;
-        color: #607d8b;
+        color: #d8737f;
       }
     }
 
@@ -63,7 +63,7 @@
 
       .volumeIcon {
         cursor: pointer;
-        color: #607d8b;
+        color: #d8737f;
         border: 0;
         background: white;
       }
@@ -118,7 +118,7 @@
     transform: scaleY(0.4);
     height: 100%;
     width: var(--boxSize);
-    background: #12e2dc;
+    background: #fcbb6d;
     animation-duration: 1.2s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
