@@ -4,11 +4,11 @@ module.exports = (phase) => {
   const isDev = phase === PHASE_DEVELOPMENT_SERVER;
 
   const env = {
-    IS_GOOGLE_ANALYTICS_ENABLED: () => {
+    IS_GOOGLE_ANALYTICS_ENABLED: (() => {
       if (isDev) return false;
 
       return true;
-    },
+    })(),
     IS_ADSENSE_ENABLED: (() => {
       if (isDev) return false;
 
