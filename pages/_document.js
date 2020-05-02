@@ -2,6 +2,7 @@ import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
 
 import { GA_TRACKING_ID } from "../lib/gtag";
+import { ADSENSE_CLIENT_ID } from "../lib/adsense";
 
 export default class extends Document {
   render() {
@@ -33,7 +34,7 @@ export default class extends Document {
             dangerouslySetInnerHTML={{
               __html: `
               (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "ca-pub-9563162482219213",
+                google_ad_client: '${ADSENSE_CLIENT_ID}',
                 enable_page_level_ads: true,
               })
           `,
