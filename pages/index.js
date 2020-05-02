@@ -8,21 +8,26 @@ import { injectAd, AD_UNIT_ID } from "../components/ads";
 import { getAllSounds } from "../lib/api";
 
 const HomePage = ({ allSounds }) => {
-  const allItems = allSounds.reduce((acc, { title, path }, index) => {
-    acc.push(<SoundWidget title={title} path={path} />);
-
-    if ((index + 1) % 3 === 0 && process.env.IS_ADSENSE_ENABLED) {
+  const allItems = allSounds.reduce(
+    (acc, { title, path, attribution }, index) => {
       acc.push(
-        injectAd({
-          adSlot: AD_UNIT_ID,
-          width: "300px",
-          height: "250px",
-        })
+        <SoundWidget title={title} path={path} attribution={attribution} />
       );
-    }
 
-    return acc;
-  }, []);
+      if ((index + 1) % 3 === 0 && process.env.IS_ADSENSE_ENABLED) {
+        acc.push(
+          injectAd({
+            adSlot: AD_UNIT_ID,
+            width: "300px",
+            height: "250px",
+          })
+        );
+      }
+
+      return acc;
+    },
+    []
+  );
 
   return (
     <Layout
@@ -39,7 +44,7 @@ const HomePage = ({ allSounds }) => {
 };
 
 export async function getStaticProps() {
-  const allSounds = getAllSounds(["title", "path"]);
+  const allSounds = getAllSounds(["title", "path", "attribution"]);
 
   return {
     props: { allSounds },

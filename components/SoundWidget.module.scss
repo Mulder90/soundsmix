@@ -18,6 +18,16 @@
     margin: 0;
   }
 
+  .attribution {
+    margin: 0;
+
+    a {
+      color: #dfdfdf;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
   .controls {
     width: 100%;
     display: flex;

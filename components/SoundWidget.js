@@ -8,7 +8,7 @@ import {
 
 import styles from "./SoundWidget.module.scss";
 
-const SoundWidget = ({ title, path }) => {
+const SoundWidget = ({ title, path, attribution }) => {
   const audioId = `audio-${title}`;
   const [isActive, setIsActive] = useState(false);
   const [volume, setVolume] = useState(100);
@@ -44,6 +44,13 @@ const SoundWidget = ({ title, path }) => {
         <code>audio</code> element.
       </audio>
       <h3 className={styles.title}>{title}</h3>
+      {attribution && (
+        <h6 className={styles.attribution}>
+          <a href={attribution} target="_blank" rel="noopener">
+            Attribution
+          </a>
+        </h6>
+      )}
       <div className={styles.controls}>
         <button
           className={`${styles.playWrapper} ${isActive ? styles.active : ""}`}
