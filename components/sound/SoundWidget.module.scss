@@ -10,8 +10,12 @@
   margin: 0 auto;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
+  &.active {
+    border: 2px solid #8effc1;
+  }
+
   .title {
-    color: black;
+    color: #111111;
     font-weight: 300;
     text-align: center;
     font-size: 1.3rem;
@@ -20,11 +24,15 @@
 
   .attribution {
     margin: 0;
+    color: #dfdfdf;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 0.6rem;
 
-    a {
-      color: #dfdfdf;
-      cursor: pointer;
-      text-decoration: none;
+    .attributionLinkIcon {
+      margin-left: 0.2rem;
     }
   }
 
@@ -128,7 +136,7 @@
     transform: scaleY(0.4);
     height: 100%;
     width: var(--boxSize);
-    background: #fcbb6d;
+    background: #8effc1;
     animation-duration: 1.2s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;

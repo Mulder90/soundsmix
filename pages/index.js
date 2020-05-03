@@ -32,7 +32,7 @@ const HomePage = ({ allSounds }) => {
 
   return (
     <Layout
-      title="Home"
+      title="Relax with sounds."
       description="SoundsMix. Mix sounds and create the perfect combination to relax, study or work."
     >
       <SoundsGrid>

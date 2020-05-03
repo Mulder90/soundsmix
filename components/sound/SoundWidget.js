@@ -4,6 +4,7 @@ import {
   faPlay,
   faVolumeMute,
   faVolumeUp,
+  faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./SoundWidget.module.scss";
@@ -38,18 +39,28 @@ const SoundWidget = ({ title, path, attribution }) => {
   };
 
   return (
-    <div className={styles.widget} data-active={isActive}>
+    <div
+      className={`${styles.widget} ${isActive ? styles.active : ""}`}
+      data-active={isActive}
+    >
       <audio loop src={path} id={audioId} preload="none">
         Your browser does not support the
         <code>audio</code> element.
       </audio>
       <h3 className={styles.title}>{title}</h3>
       {attribution && (
-        <h6 className={styles.attribution}>
-          <a href={attribution} target="_blank" rel="noopener">
-            Attribution
-          </a>
-        </h6>
+        <a
+          href={attribution}
+          target="_blank"
+          rel="noopener"
+          className={styles.attribution}
+        >
+          Sound Attribution
+          <FontAwesomeIcon
+            icon={faExternalLinkAlt}
+            className={styles.attributionLinkIcon}
+          />
+        </a>
       )}
       <div className={styles.controls}>
         <button
